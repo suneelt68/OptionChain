@@ -2,6 +2,12 @@ from fastapi import FastAPI
 from nsepythonserver import nse_quote_ltp
 
 app = FastAPI()
+data = {
+        "23000": safe_nse_quote_ltp("NIFTY", "30-Sep-2025", "PE", 23000),
+        "25800": safe_nse_quote_ltp("NIFTY", "30-Sep-2025", "CE", 25800)
+    }
+
+print(data)
 
 def safe_nse_quote_ltp(symbol, expiry, option_type, strike):
     try:
